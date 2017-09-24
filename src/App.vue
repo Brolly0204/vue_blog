@@ -1,6 +1,6 @@
 <template>
 <div id="app">
-  <NavHeader />
+  <NavHeader></NavHeader>
   <router-view></router-view>
   <vue-progress-bar></vue-progress-bar>
 </div>
@@ -20,9 +20,9 @@ export default {
         let meta = to.meta.progress
         this.$Progress.parseMeta(meta)
       }
-      this.$Progress.start()
+      this.$Progress.start();
       next()
-    })
+    });
     this.$router.afterEach((to, from) => {
       this.$Progress.finish()
     })

@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
-import List from '@/containers/List'
+import ArticleList from '@/containers/List'
 import SignUp from '@/containers/SignUp'
 import SignIn from '@/containers/SignIn'
+import Create from '@/containers/Article/Create'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
@@ -15,9 +16,9 @@ export default new Router({
       component: Hello
     },
     {
-      path: '/list',
-      name: 'List',
-      component: List
+      path: '/article',
+      name: 'ArticleList',
+      component: ArticleList
     },
     {
       path: '/signUp',
@@ -28,6 +29,14 @@ export default new Router({
       path: '/signIn',
       name: 'SignIn',
       component: SignIn
+    },
+    {
+      path: '/create',
+      name: 'Create',
+      component: Create,
+      meta: {
+        needLogin: true
+      }
     }
   ]
 })
